@@ -30,10 +30,7 @@ public class Customer {
         Enumeration rentals = _rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
         while (rentals.hasMoreElements()) {
-            double thisAmount = 0;
             Rental each = (Rental) rentals.nextElement();
-
-            thisAmount = each.getCharge();
 
             // 포인트 (frequent renter points) 추가
             frequentRenterPoints ++;
@@ -44,8 +41,9 @@ public class Customer {
             }
 
             // 이 대여에 대한 요금 계산결과 표시
-            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
+            totalAmount += each.getCharge();
+
         }
         // 풋터(footer) 추가
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
