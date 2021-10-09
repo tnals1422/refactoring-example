@@ -33,7 +33,7 @@ public class Customer {
             double thisAmount = 0;
             Rental each = (Rental) rentals.nextElement();
 
-            thisAmount = amoutFor(each);
+            thisAmount = amountFor(each);
 
             // 포인트 (frequent renter points) 추가
             frequentRenterPoints ++;
@@ -53,7 +53,7 @@ public class Customer {
         return result;
     }
 
-    private double amoutFor(Rental each) {
+    private double amountFor(Rental each) {
         double result = 0;
         // 각 영화에 대한 요금 결정
         switch (each.getMovie().getPriceCode()) {
