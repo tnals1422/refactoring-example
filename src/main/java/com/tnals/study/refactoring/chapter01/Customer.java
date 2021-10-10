@@ -25,7 +25,7 @@ public class Customer {
 
     public String statement() {
         Enumeration rentals = _rentals.elements();
-        String result = "Rental Record for " + getName() + "\n";
+        String result = "<H1>Rental Record for <EM>" + getName() + "</EM>></H1><P>\n";
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
 
@@ -35,8 +35,8 @@ public class Customer {
         }
 
         // 풋터(footer) 추가
-        result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
-        result += "You earned " + String.valueOf(getFrequentRenterPoints()) + " frequent renter points";
+        result += "<P> You owe <EM>" + String.valueOf(getTotalCharge()) + "</EM><P>\n";
+        result += "On this rental you earned <EM>" + String.valueOf(getFrequentRenterPoints()) + "</EM> frequent renter points<P>";
         return result;
     }
 
